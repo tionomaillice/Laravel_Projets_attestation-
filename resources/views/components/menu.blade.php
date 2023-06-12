@@ -76,8 +76,8 @@
             </ul>
         </li>
 
-        <li class="nav-item ">
-            <a href="#" class="nav-link ">
+        <li class="nav-item {{ setMenuClass('admin.gestattestations.', 'menu-open') }}">
+            <a href="#" class="nav-link {{ setMenuClass('admin.gestattestations.habilitations.', 'active') }} ">
                 <i class="nav-icon fas fa-cogs"></i>
                 <p>
                 Gestion attestation
@@ -86,8 +86,8 @@
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="#"
-                        class="nav-link"
+                    <a href="{{ route('admin.habilitations.typeattestations') }}"
+                        class="nav-link  {{ setMenuClass('admin.habilitations.typeattestations', 'active') }} "
                         >
                     <i class="nav-icon far fa-circle"></i>
                     <p>Type attestations</p>
@@ -112,7 +112,7 @@
              {{--  --}}
               <i class=" nav-icon fas fa-user-shield"></i>
               <p>
-                
+
                 Retrait
                 <i class="right fas fa-angle-left"></i>
               </p>
@@ -120,10 +120,10 @@
             <ul class="nav nav-treeview">
               <li class="nav-item ">
                 <a
-                href="#"
-                {{--{{ route('etudiant.Retrait.demandes')}}  --}}
-                class="nav-link  ">
-                {{-- {{ setMenuClass('etudiant.Retrait.demandes', 'active') }} --}}
+                href="{{ route('etudiant.Retrait.demandes')}}  "
+                {{----}}
+                class="nav-link {{ setMenuClass('etudiant.Retrait.demandes', 'active') }}  ">
+                {{--  --}}
 
                   <i class=" nav-icon fas fa-users-cog"></i>
                   <p>Demandes</p>

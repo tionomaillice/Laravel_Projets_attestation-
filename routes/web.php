@@ -43,38 +43,33 @@ Route::group([
     ], function(){
 
         Route::get("/utilisateurs", Utilisateurs::class)->name("users.index");
-       // Route::get("/rolesetpermissions", [UserController::class, "index"])->name("rolespermissions.index");
-
-
     });
 
-// Route::group([
-//     "prefix" => "gestattestations",
-//     'as' => 'gestattestations.'
-// ], function(){
+Route::group([
+    "prefix" => "gestattestations",
+    'as' => 'gestattestations.'
+], function(){
 
-//     Route::get("/typeattestations", TypeAttestationsComp::class)->name("typeattestations");
-// //     Route::get("/articles", ArticleComp::class)->name("articles");
-// //    Route::get("/articles/{articleId}/tarifs", TarifComp::class)->name("articles.tarifs");
+    Route::get("/typeattestations", TypeAttestationsComp::class)->name("typeattestations");
 
-// });
+});
 
 
 });
 
-// Route::group([
-//     "middleware" => ["auth", "auth.etudiant"],
-//     'as' => 'etudiant.'
-// ], function(){
-//     Route::group([
-//         "prefix" => "Retrait",
-//         'as' => 'Retrait.'
-//     ], function(){
+Route::group([
+    "middleware" => ["auth", "auth.etudiant"],
+    'as' => 'etudiant.'
+], function(){
+    Route::group([
+        "prefix" => "Retrait",
+        'as' => 'Retrait.'
+    ], function(){
 
-//         Route::get("/demandes", Demandes::class)->name("demandes");
-
-
-//     });
+        Route::get("/demandes", Demandes::class)->name("demandes");
 
 
-// });
+    });
+
+
+});
