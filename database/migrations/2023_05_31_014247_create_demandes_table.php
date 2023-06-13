@@ -15,9 +15,13 @@ class CreateDemandesTable extends Migration
     {
         Schema::create('demandes', function (Blueprint $table) {
                 $table->id();
-                $table->date("date_demande");
-                $table->integer("numero_demande");
-                $table->string("document");
+                $table->date("date");
+                $table->integer("numero");
+                $table->string("acte_naissance");
+                $table->string("quittance");
+                $table->string("recue_quittance");
+                $table->string("quitus");
+                $table->string("demande");
                 $table->foreignId("attestation_id");
                 $table->foreignId("user_id");
                 $table->foreignId("statut_demande_id");

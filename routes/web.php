@@ -4,7 +4,10 @@ use App\Http\Livewire\TypeAttestationsComp;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Demandes;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\EtudiantController;
+
 use App\Http\Livewire\Utilisateurs;
+
 
 
 
@@ -23,10 +26,10 @@ use App\Http\Livewire\Utilisateurs;
 //     return view('welcome');
 // });
 
-Route::get('/pass', function () {
-    $pass=bcrypt('camille');
-    return $pass;
-});
+// Route::get('/pass', function () {
+//     $pass=bcrypt('camille');
+//     return $pass;
+// });
 
 Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -45,17 +48,17 @@ Route::group([
         Route::get("/utilisateurs", Utilisateurs::class)->name("users.index");
     });
 
-Route::group([
-    "prefix" => "gestattestations",
-    'as' => 'gestattestations.'
-], function(){
+// Route::group([
+//     "prefix" => "gestattestations",
+//     'as' => 'gestattestations.'
+// ], function(){
 
-    Route::get("/typeattestations", TypeAttestationsComp::class)->name("typeattestations");
+//     Route::get("/typeattestations", TypeAttestationsComp::class)->name("typeattestations");
 
-});
+ });
 
 
-});
+//  });
 
 Route::group([
     "middleware" => ["auth", "auth.etudiant"],
@@ -66,10 +69,17 @@ Route::group([
         'as' => 'Retrait.'
     ], function(){
 
-        Route::get("/demandes", Demandes::class)->name("demandes");
+        Route::get("/demandes", Demandes::class)->name("create.index");
 
 
     });
 
+    // routes/web.php
+
+Route::get('/demande/{id}/statut', [DemandeController::class, 'verifierStatut'])->name('demande.statut');
+
+
 
 });
+//Route::get('/etudiant/retrait/demandes', [EtudiantController::class, 'demandes'])->name('etudiant.Retrait.demandes');
+

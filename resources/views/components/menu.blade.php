@@ -11,42 +11,6 @@
             </a>
           </li>
 
-          @can("manager")
-
-
-        <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Tableau de bord
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link active">
-                  <i class="nav-icon fas fa-chart-line"></i>
-                  <p>Vue globale</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-swatchbook"></i>
-                  <p>Retraits</p>
-                </a>
-              </li>
-            </ul>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-swatchbook"></i>
-              <p>Statistique</p>
-            </a>
-          </li>
-        </ul>
-    </li>
-        @endcan
-
         @can("admin")
         <li class="nav-item {{ setMenuClass('admin.habilitations.', 'menu-open') }}">
             <a href="#"
@@ -101,8 +65,84 @@
                     </a>
                 </li>
             </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="#"
+                        class="nav-link"
+                        >
+                    <i class="nav-icon far fa-circle"></i>
+                    <p>Reception</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#"
+                        class="nav-link">
+                    <i class="nav-icon fas fa-list-ul"></i>
+                    <p>Traitement</p>
+                    </a>
+                </li>
+            </ul>
         </li>
+        <li class="nav-item {{ setMenuClass('admin.gestattestations.', 'menu-open') }}">
+            <a href="#" class="nav-link {{ setMenuClass('admin.gestattestations.habilitations.', 'active') }} ">
+                <i class="nav-icon fas fa-cogs"></i>
+                <p>
+                Duplicatas
+                <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="#"
+                        class="nav-link"
+                        >
+                    <i class="nav-icon far fa-circle"></i>
+                    <p>Reception</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#"
+                        class="nav-link">
+                    <i class="nav-icon fas fa-list-ul"></i>
+                    <p>Traitement</p>
+                    </a>
+                </li>
+            </ul>
         @endcan
+
+        @can("manager")
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Tableau de bord
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link active">
+                  <i class="nav-icon fas fa-chart-line"></i>
+                  <p>Vue globale</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-swatchbook"></i>
+                  <p>Retraits</p>
+                </a>
+              </li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-swatchbook"></i>
+              <p>Statistique</p>
+            </a>
+          </li>
+        </ul>
+    </li>
+    @endcan
 
         @can("etudiant")
         <li class="nav-item {{ setMenuClass('etudiant.Retrait.', 'menu-open') }}">
@@ -120,9 +160,9 @@
             <ul class="nav nav-treeview">
               <li class="nav-item ">
                 <a
-                href="{{ route('etudiant.Retrait.demandes')}}  "
+                href="{{ route('etudiant.Retrait.create.index')}}  "
                 {{----}}
-                class="nav-link {{ setMenuClass('etudiant.Retrait.demandes', 'active') }}  ">
+                class="nav-link {{ setMenuClass('etudiant.Retrait.create.index', 'active') }}  ">
                 {{--  --}}
 
                   <i class=" nav-icon fas fa-users-cog"></i>

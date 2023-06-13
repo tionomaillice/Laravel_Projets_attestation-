@@ -74,7 +74,7 @@
         Merci pour votre réponse
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2022-2023 <a href=" unz@info.bf">Université NORBERT ZONGO</a>.</strong> Tous droits réservés.
+    <strong>Copyright &copy; 2022-2023 <a href=" unz@info.bf">Léthicia Maïllice TIONO</a>.</strong> Tous droits réservés.
   </footer>
 </div>
 <!-- ./wrapper -->
