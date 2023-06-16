@@ -6,7 +6,7 @@ define("PAGELIST", "liste");
 define("PAGECREATEFORM", "create");
 define("PAGEEDITFORM", "edit");
 
-define("DEFAULTCAMILLE", "camille");
+define("DEFAULTPASSOWRD", "password");
 
 
 

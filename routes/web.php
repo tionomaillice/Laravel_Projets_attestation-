@@ -7,9 +7,10 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\EtudiantController;
 
 use App\Http\Livewire\Utilisateurs;
-
-
-
+use App\Http\Livewire\AttestationsComp;
+use App\Http\Livewire\ReceptionComp;
+use App\Http\Livewire\TraitementComp;
+use App\Http\Livewire\Vue;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,17 +49,39 @@ Route::group([
         Route::get("/utilisateurs", Utilisateurs::class)->name("users.index");
     });
 
-// Route::group([
-//     "prefix" => "gestattestations",
-//     'as' => 'gestattestations.'
-// ], function(){
+Route::group([
+    "prefix" => "gestattestations",
+    'as' => 'gestattestations.'
+]
+, function(){
 
-//     Route::get("/typeattestations", TypeAttestationsComp::class)->name("typeattestations");
-
+    Route::get("/typeattestations", TypeAttestationsComp::class)->name("types.index");
+    Route::get("/attestations", AttestationsComp::class)->name("app.index");
+    Route::get("/reception", ReceptionComp::class)->name("add.index");
+    Route::get("/taitement", TraitementComp::class)->name("opp.index");
  });
 
 
-//  });
+ Route::group([
+    "prefix" => "duplicatas",
+    'as' => 'duplicatas.'
+], function(){
+
+
+    Route::get("/reception1", ReceptionComp::class)->name("use.index");
+    Route::get("/taitement1", TraitementComp::class)->name("cat.index");
+ });
+ Route::group([
+    "prefix" => "tableau",
+    'as' => 'tableau.'
+], function(){
+
+
+    Route::get("/vue", Vue::class)->name("view.index");
+
+ });
+
+});
 
 Route::group([
     "middleware" => ["auth", "auth.etudiant"],
@@ -74,12 +97,28 @@ Route::group([
 
     });
 
-    // routes/web.php
 
-Route::get('/demande/{id}/statut', [DemandeController::class, 'verifierStatut'])->name('demande.statut');
+// Route::get('/demande/{id}/statut', [DemandeController::class, 'verifierStatut'])->name('demande.statut');
 
 
 
 });
-//Route::get('/etudiant/retrait/demandes', [EtudiantController::class, 'demandes'])->name('etudiant.Retrait.demandes');
 
+// Route::group([
+//     "middleware" => ["auth", "auth.manager"],
+//     'as' => 'manager.'
+// ], function(){
+//     Route::group([
+//         "prefix" => "tableau",
+//         'as' => 'tableau.'
+//     ], function(){
+
+//         Route::get("/vue", Vue::class)->name("view.index");
+
+
+//     });
+
+
+
+
+// });

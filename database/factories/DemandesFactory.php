@@ -14,13 +14,9 @@ class DemandesFactory extends Factory
     public function definition()
     {
         return [
-            'date' => $this->faker->date(),
-            'numero'=> $this->faker->numerify(),
-            'acte_naissance'=> $this->faker->fileExtension(),
-            'quittance'=> $this->faker->fileExtension(),
-            'recue_quittance'=> $this->faker->fileExtension(),
-            'quitus'=> $this->faker->fileExtension(),
-            'demande'=> $this->faker->fileExtension(),
+            'date_demande' => $this->faker->date(),
+            'numero_demande'=> $this->faker->numerify(),
+            'document'=> $this->faker->fileExtension(),
             "user_id"=> rand(),
             "attestation_id"=> rand(),
             "statut_demande_id"=> rand(1,4),

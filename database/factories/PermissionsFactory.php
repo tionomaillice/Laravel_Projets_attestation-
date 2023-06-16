@@ -14,9 +14,8 @@ class PermissionsFactory extends Factory
     public function definition()
     {
         return [
-            "nom_permissions"=> array_rand(["créer un compte administrateur","modifier un compte administrateur","supprimer un compte administrateur",
-            "consulter une attestation","imprimer une attestation","ttraiter les demandes","deposer une demandes","suivre l'etat de sa demande",
-        "verifier l'authenticité d'une attestation","gerer le tableau de bord"],1)
+            'nom_permissions' => $this->faker->name(),
+            "role_id" =>rand(),          //
         ];
     }
 }

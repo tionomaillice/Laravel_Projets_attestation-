@@ -64,7 +64,6 @@ class Kernel extends HttpKernel
 
         'auth.superadmin' => \App\Http\Middleware\SuperAdminMiddleware::class,
         'auth.etudiant' => \App\Http\Middleware\EtudiantMiddleware::class,
-        'auth.manager' => \App\Http\Middleware\ManagerMiddleware::class,
         'auth.authentificateur' => \App\Http\Middleware\AuthentificateurMiddleware::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,

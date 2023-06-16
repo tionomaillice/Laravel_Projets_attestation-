@@ -18,7 +18,6 @@ class RolesSeeder extends Seeder
             ["nom"=>"superadmin"],
             ["nom"=>"admin"],
             ["nom"=>"etudiant"],
-            ["nom"=>"manager"],
             ["nom"=>"authentificateur"],
         ]);
         //

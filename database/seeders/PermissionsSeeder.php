@@ -15,20 +15,25 @@ class PermissionsSeeder extends Seeder
     public function run()
     {
         DB::table("permissions")->insert([
-            ["nom"=>"créer un compte administrateur"],
+            ["nom"=>"ajouter un administrateur"],
             ["nom"=>"modifier un compte administrateur"],
-            ["nom"=>"supprimmer un compte administrateur"],
+            ["nom"=>"supprimer un compte administrateur"],
 
-            ["nom"=>"consulter une attestation"],
+            ["nom"=>"ajouter un retrait"],
+            ["nom"=>"modifier un retrait"],
+            ["nom"=>"editer un retrait"],
+
+
+            ["nom"=>"ajouter une attestion"],
+            ["nom"=>"modifier consulter une attestation"],
+            ["nom"=>" editer une attestation"],
+            ["nom"=>"modifier un consulter une attestion"],
             ["nom"=>"imprimer une attestation"],
-            ["nom"=>"traiter les demandes"],
+            ["nom"=>"verifier l'authenticité d'une attestation"],
 
             ["nom"=>"deposer une demandes"],
-            ["nom"=>"suivre l'etat de sa demandes"],
+            ["nom"=>"suivre une demandes"]
 
-            ["nom"=>"gerer le tableau de bord"],
-            
-            ["nom"=>"verifier l'authenticité d'une attestation"],
 
 
         ]);

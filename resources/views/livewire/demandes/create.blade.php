@@ -6,7 +6,7 @@
                 <h3 class="card-title"><i class="fas fa-paper-plane fa-2x"></i>Formulaire de demande</h3>
             </div>
             <!-- /.card-header -->
-            <form wire:submit.prevent="submitForm" role="form" method="POST" enctype="multipart/form-data">
+            <form wire:submit.prevent="submitForm()" role="form" method="POST" enctype="multipart/form-data">
                 <div class="card-body">
                     @csrf
                     <!-- Champs pour les fichiers PDF -->

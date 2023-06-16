@@ -31,60 +31,75 @@
                   <p>Utilisateurs</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-fingerprint"></i>
-                  <p>Roles et permissions</p>
-                </a>
-              </li>
             </ul>
         </li>
-
-        <li class="nav-item {{ setMenuClass('admin.gestattestations.', 'menu-open') }}">
-            <a href="#" class="nav-link {{ setMenuClass('admin.gestattestations.habilitations.', 'active') }} ">
+        {{-- <li class="nav-item {{ setMenuClass('admin.gestattestations.', 'menu-open') }}">
+            <a href="#"
+                    class="nav-link {{ setMenuClass('admin.gestattestations.', 'active') }}">
+                  <i class=" nav-icon fas fa-user-shield"></i>
+                  <p>
+                    Gestion des attestations
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+            </a>
+            <li class="nav-item">
+                    <a href="{{ route('admin.gestattestations.app.index') }}"
+                        class="nav-link {{ setMenuClass('admin.gestattestations.app.index', 'active') }}">
+                        <i class="nav-icon fas fa-list-ul"></i>
+                        <p>Attestations</p>
+                    </a>
+            </li>
+           <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('admin.gestattestations.add.index') }}"
+                        class="nav-link {{ setMenuClass('admin.gestattestations.add.index', 'active') }}"
+                        >
+                        <i class="nav-icon far fa-circle"></i>
+                     <p>Reception</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.gestattestations.opp.index') }}"
+                        class="nav-link {{ setMenuClass('admin.gestattestations.opp.index', 'active') }}">
+                        <i class="nav-icon fas fa-list-ul"></i>
+                        <p>Traitement</p>
+                    </a>
+                </li>
+            </ul>
+        </li> --}}
+        <li class="nav-item  {{ setMenuClass('admin.gestattestations.', 'menu-open') }}">
+            <a href="#" class="nav-link  {{ setMenuClass('admin.gestattestations.', 'active') }}">
                 <i class="nav-icon fas fa-cogs"></i>
                 <p>
-                Gestion attestation
+                Gestion des attestations
                 <i class="right fas fa-angle-left"></i>
                 </p>
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{ route('admin.habilitations.typeattestations') }}"
-                        class="nav-link  {{ setMenuClass('admin.habilitations.typeattestations', 'active') }} "
+                    <a href="{{ route('admin.gestattestations.app.index') }}"
+                        class="nav-link {{ setMenuClass('admin.gestattestations.app.index', 'active') }}"
                         >
                     <i class="nav-icon far fa-circle"></i>
-                    <p>Type attestations</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#"
-                        class="nav-link">
-                    <i class="nav-icon fas fa-list-ul"></i>
                     <p>Attestations</p>
                     </a>
                 </li>
-            </ul>
-            <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="#"
-                        class="nav-link"
-                        >
+                    <a href="{{ route('admin.gestattestations.add.index') }}" class="nav-link {{ setMenuClass('admin.gestattestations.add.index', 'active') }}">
                     <i class="nav-icon far fa-circle"></i>
                     <p>Reception</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#"
-                        class="nav-link">
+                    <a href="{{ route('admin.gestattestations.opp.index') }}"
+                        class="nav-link  {{ setMenuClass('admin.gestattestations.opp.index', 'active') }}">
                     <i class="nav-icon fas fa-list-ul"></i>
                     <p>Traitement</p>
                     </a>
                 </li>
             </ul>
-        </li>
-        <li class="nav-item {{ setMenuClass('admin.gestattestations.', 'menu-open') }}">
-            <a href="#" class="nav-link {{ setMenuClass('admin.gestattestations.habilitations.', 'active') }} ">
+        <li class="nav-item {{ setMenuClass('admin.duplicatas.', 'menu-open') }}">
+            <a href="#"  class="nav-link {{ setMenuClass('admin.duplicatas.', 'active') }}">
                 <i class="nav-icon fas fa-cogs"></i>
                 <p>
                 Duplicatas
@@ -93,26 +108,23 @@
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="#"
-                        class="nav-link"
+                    <a href="{{ route('admin.duplicatas.use.index') }}"
+                        class="nav-link {{ setMenuClass('admin.duplicatas.opp.index', 'active') }}"
                         >
                     <i class="nav-icon far fa-circle"></i>
                     <p>Reception</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#"
-                        class="nav-link">
+                    <a href="{{ route('admin.duplicatas.cat.index') }}"
+                        class="nav-link  {{ setMenuClass('admin.duplicatas.cat.index', 'active') }}">
                     <i class="nav-icon fas fa-list-ul"></i>
                     <p>Traitement</p>
                     </a>
                 </li>
             </ul>
-        @endcan
-
-        @can("manager")
-        <li class="nav-item">
-            <a href="#" class="nav-link">
+        <li class="nav-item {{ setMenuClass('admin.tableau.', 'menu-open') }}">
+            <a href="#" class="nav-link {{ setMenuClass('admin.tableau.', 'active') }} ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Tableau de bord
@@ -121,7 +133,10 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link active">
+                <a href="{{ route('admin.tableau.view.index')}}"
+
+                class="nav-link {{ setMenuClass('admin.tableau.view.index', 'active') }}">
+                {{--  --}}
                   <i class="nav-icon fas fa-chart-line"></i>
                   <p>Vue globale</p>
                 </a>
@@ -132,19 +147,17 @@
                   <p>Retraits</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-swatchbook"></i>
+                  <p>Statistique</p>
+                </a>
+              </li>
             </ul>
         </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-swatchbook"></i>
-              <p>Statistique</p>
-            </a>
-          </li>
-        </ul>
     </li>
     @endcan
-
-        @can("etudiant")
+        @can('etudiant')
         <li class="nav-item {{ setMenuClass('etudiant.Retrait.', 'menu-open') }}">
         {{--  --}}
             <a href="#"
@@ -152,7 +165,6 @@
              {{--  --}}
               <i class=" nav-icon fas fa-user-shield"></i>
               <p>
-
                 Retrait
                 <i class="right fas fa-angle-left"></i>
               </p>
